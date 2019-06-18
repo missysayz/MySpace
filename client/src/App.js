@@ -9,19 +9,23 @@ import { Container } from "semantic-ui-react";
 import FetchUser from "./components/FetchUser";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-<div>
-  <Navbar />
-  <FetchUser>
-    <Container>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
-        <ProtectedRoute exact path='/' component={Home} />
-        <Route component={NoMatch} />
-      </Switch>
-    </Container>
-  </FetchUser>
-</div>;
+const App = () => (
+  <Fragment>
+    <div>
+      <Navbar />
+      <FetchUser>
+        <Container>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Container>
+      </FetchUser>
+    </div>
+    ;
+  </Fragment>
+);
 
 export default App;
