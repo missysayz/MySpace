@@ -23,19 +23,19 @@ class Home extends React.Component {
     }
   };
 
-  downVote = id => {
-    const { profiles } = this.state;
-    this.setState({ profiles: profiles.filter(p => p.id !== id) });
-  };
+  // downVote = id => {
+  //   const { profiles } = this.state;
+  //   this.setState({ profiles: profiles.filter(p => p.id !== id) });
+  // };
 
-  upvote = id => {
-    const { profiles } = this.state;
-    axios
-      .put(`/api/profiles/${id}`)
-      .then(() =>
-        this.setState({ profiles: profiles.filter(p => p.id !== id) })
-      );
-  };
+  // upvote = id => {
+  //   const { profiles } = this.state;
+  //   axios
+  //     .put(`/api/profiles/${id}`)
+  //     .then(() =>
+  //       this.setState({ profiles: profiles.filter(p => p.id !== id) })
+  //     );
+  // };
 
   render() {
     const profile = this.sample();
@@ -58,7 +58,7 @@ class Home extends React.Component {
                 color='red'
                 icon
                 basic
-                onClick={() => downVote(profile.id)}
+                // onClick={() => downVote(profile.id)}
               >
                 <Icon name='thumbs down' />
               </Button>
@@ -66,7 +66,7 @@ class Home extends React.Component {
                 color='green'
                 icon
                 basic
-                onClick={() => upVote(profile.id)}
+                // onClick={() => upVote(profile.id)}
               >
                 <Icon name='thumbs up' />
               </Button>
