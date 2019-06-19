@@ -1,2 +1,0 @@
-class Myspaceuser < ApplicationRecord
-end
