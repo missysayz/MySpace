@@ -23,31 +23,57 @@ class Home extends React.Component {
     }
   };
 
+  downVote = id => {
+    const { profiles } = this.state;
+    this.setState({ profiles: profiles.filter(p => p.id !== id) });
+  };
+
+  upvote = id => {
+    const { profiles } = this.state;
+    axios
+      .put(`/api/profiles/${id}`)
+      .then(() =>
+        this.setState({ profiles: profiles.filter(p => p.id !== id) })
+      );
+  };
+
   render() {
     const profile = this.sample();
     if (profile) {
       return (
         <div>
           <br />
-          <Header as='h1'> My Space with React Context</Header>
+          <Header as='h3' textAlign='center'>
+            My Space With React Context User Auth
+          </Header>
           <br />
-          <Card key={profile.id}>
+          <Card>
             <Image src={profile.avatar} />
             <Card.Content>
               <Card.Header>{profile.name}</Card.Header>
-              <Card.Description>{profile.dob}</Card.Description>
+              <Card.Meta>{profile.dob}</Card.Meta>
             </Card.Content>
             <Card.Content extra>
-              <Button color='red' icon basic>
+              <Button
+                color='red'
+                icon
+                basic
+                onClick={() => downVote(profile.id)}
+              >
                 <Icon name='thumbs down' />
               </Button>
-              <Button color='green' icon basic>
+              <Button
+                color='green'
+                icon
+                basic
+                onClick={() => upVote(profile.id)}
+              >
                 <Icon name='thumbs up' />
               </Button>
             </Card.Content>
           </Card>
-          <Link to='/my_profiles'>
-            <Button color='blue'>My profiles</Button>
+          <Link to='/my-profiles'>
+            <Button color='blue'>My Profiles</Button>
           </Link>
         </div>
       );

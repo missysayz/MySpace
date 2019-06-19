@@ -9,4 +9,8 @@ class Api::ProfilesController < ApplicationController
     current_user.liked_accounts << params[:id].to_i
     current_user.save
   end
+
+  def my_profiles
+    render json: User.liked(current_user.liked_profiles)
+  end
 end
