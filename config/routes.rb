@@ -5,6 +5,11 @@ Rails.application.routes.draw do
     resources :profiles, only: [:index, :update]
     get "my_profiles", to: "profiles#my_profiles"
   end
+
+  resources :profiles do
+    resources :friends, only: [:index]
+    get "my_friends", to: "friends#my_friends"
+end
 end
 
 
