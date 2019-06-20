@@ -1,10 +1,9 @@
-1.times do
+10.times do
   u = User.create(
     name: Faker::DcComics.hero,
     email: Faker::Internet.free_email,
     password: 'password'
   )
-  binding.pry
   1.times do 
     name = Faker::Name.name
     u.profiles.create(

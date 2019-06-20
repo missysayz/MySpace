@@ -3,7 +3,7 @@
 class User < ActiveRecord::Base
   has_many :profiles
   has_many :friends
-  has_many :profiles, through :friends
+  has_many :profiles, through: :friends
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
