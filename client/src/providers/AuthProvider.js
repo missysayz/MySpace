@@ -14,8 +14,8 @@ export class AuthProvider extends React.Component {
         this.setState({ user: res.data.data });
         history.push("/");
       })
-      .catch(res => {
-        console.log(res);
+      .catch(err => {
+        console.log(err);
       });
   };
 
@@ -60,3 +60,4 @@ export class AuthProvider extends React.Component {
     );
   }
 }
+export default AuthProvider;

@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import FetchUser from "./components/FetchUser";
 import MyProfiles from "./components/MyProfiles";
+import AuthProvider from "./providers/AuthProvider";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
