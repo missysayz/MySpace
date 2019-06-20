@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Header, Image, Card, Button, Icon } from "semantic-ui-react";
 
 class Home extends React.Component {
-  state = { profiles: [] };
+  state = { profiles: [], };
 
   componentDidMount() {
     axios
@@ -22,20 +22,6 @@ class Home extends React.Component {
       return null;
     }
   };
-
-  // downVote = id => {
-  //   const { profiles } = this.state;
-  //   this.setState({ profiles: profiles.filter(p => p.id !== id) });
-  // };
-
-  // upvote = id => {
-  //   const { profiles } = this.state;
-  //   axios
-  //     .put(`/api/profiles/${id}`)
-  //     .then(() =>
-  //       this.setState({ profiles: profiles.filter(p => p.id !== id) })
-  //     );
-  // };
 
   render() {
     const profile = this.sample();
@@ -58,7 +44,7 @@ class Home extends React.Component {
                 color='red'
                 icon
                 basic
-                // onClick={() => downVote(profile.id)}
+              // onClick={() => downVote(profile.id)}
               >
                 <Icon name='thumbs down' />
               </Button>
@@ -66,7 +52,7 @@ class Home extends React.Component {
                 color='green'
                 icon
                 basic
-                // onClick={() => upVote(profile.id)}
+              // onClick={() => upVote(profile.id)}
               >
                 <Icon name='thumbs up' />
               </Button>
@@ -78,7 +64,16 @@ class Home extends React.Component {
         </div>
       );
     } else {
-      return <Header textAlign='center'>No More Profiles</Header>;
+      return (
+        <div>
+          <Header textAlign='center'>No More Profiles</Header>
+          <Link to='/ProfileForm'>
+            <Button color='blue'>
+              Add New Profile
+          </Button>
+          </Link>
+        </div>
+      )
     }
   }
 }

@@ -12,15 +12,15 @@ class MyFriends extends React.Component {
   }
 
   render() {
-    const { profiles } = this.state;
+    const { friends } = this.state;
     return (
       <Card.Group itemsPerRow={4}>
-        {profiles.map(profile => (
-          <Card key={profile.id}>
-            <Image src={profile.avatar} />
+        {friends.map(friend => (
+          <Card key={friend.id}>
+            <Image src={friend.avatar} />
             <Card.Content>
               <Divider />
-              <Card.Header>{profile.name}</Card.Header>
+              <Card.Header>{friend.name}</Card.Header>
             </Card.Content>
           </Card>
         ))}
