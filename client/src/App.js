@@ -8,6 +8,7 @@ import { Switch, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import FetchUser from "./components/FetchUser";
 import MyProfiles from "./components/MyProfiles";
+import MyProfileForm from './components/MyProfileForm';
 import MyFriends from "./components/MyFriends";
 // import AuthProvider from "./providers/AuthProvider";
 
@@ -24,6 +25,7 @@ const App = () => (
             <ProtectedRoute exact path='/profile/my-friends' component={MyFriends} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
+            <Route exact path='/MyProfileForm' component={MyProfileForm} />
             <ProtectedRoute exact path='/my_profiles' component={MyProfiles} />
             <Route component={NoMatch} />
           </Switch>
