@@ -1,19 +1,20 @@
 import React from "react";
 import { AuthConsumer } from "../providers/AuthProvider";
-import { Button, Form, Segment, Header } from "semantic-ui-react";
+import { Button, Form, Segment, Header, Icon } from "semantic-ui-react";
 
 class Login extends React.Component {
   state = { email: "", password: "" };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    this.props.auth.handleLogin({ email, password }, this.props.history);
-  };
+    const { email, password, } = this.state;
+    const { auth: { handleLogin, }, history } = this.props;
+    handleLogin({ email, password, }, history);
+  }
 
-  handleChange = e => {
+  handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ [name]: value, });
   };
 
   render() {
@@ -21,9 +22,7 @@ class Login extends React.Component {
 
     return (
       <Segment basic>
-        <Header as='h1' textAlign='center'>
-          Login
-        </Header>
+        <Header as='h1' textAlign='center'>Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
             label='Email'
@@ -44,13 +43,18 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>
-              Submit
+            <Button primary animated icon type='submit'>
+              <Button.Content hidden>
+                <Icon name='check' />
+              </Button.Content>
+              <Button.Content visible>
+                Submit
+                </Button.Content>
             </Button>
           </Segment>
         </Form>
       </Segment>
-    );
+    )
   }
 }
 
@@ -58,8 +62,9 @@ export default class ConnectedLogin extends React.Component {
   render() {
     return (
       <AuthConsumer>
-        {auth => <Login {...this.props} auth={auth} />}
+        {auth =>
+          <Login {...this.props} auth={auth} />}
       </AuthConsumer>
-    );
+    )
   }
 }
