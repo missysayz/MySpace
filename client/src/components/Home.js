@@ -16,30 +16,32 @@ class Home extends React.Component {
     const { profiles } = this.state;
 
     if (profiles.length) {
-      const random_number = Math.floor(Math.random() * profiles.length);
-      return profiles[random_number];
+      const index = Math.floor(Math.random() * profiles.length);
+      return profiles[index];
     } else {
       return null;
     }
   };
+
+  follow = (id) => {
+    const { profiles, } = this.state;
+    axios.put(`/api/profiles/${id}`)
+      .then(() => this.setState({ profiles: profiles.filter(p => p.id !== id) }));
+
+  }
 
   unfollow = (id) => {
     const { profiles, } = this.state;
     this.setState({ profiles: profiles.filter(p => p.id !== id) })
   }
 
-  follow = (id) => {
-    const { profiles, } = this.state;
-    axios.put(`/api/friends/${id}`)
-      .then(() => this.setState({ profiles: profiles.filter(f => f.id !== id) }));
 
-  }
 
-  renderProfiles = () => {
-    return (
-      this.state.profiles.map(profile => <li>{profile.name}</li>)
-    )
-  }
+  // renderProfiles = () => {
+  //   return (
+  //     this.state.profiles.map(profile => <li>{profile.name}</li>)
+  //   )
+  // }
 
   render() {
     const profile = this.sample();
