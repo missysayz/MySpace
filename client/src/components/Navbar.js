@@ -53,7 +53,7 @@ class Navbar extends React.Component {
         <Menu
           icon='labeled'
           secondary
-          color='blue'
+          color='purple'
           inverted>
 
           <Menu.Item name="users">

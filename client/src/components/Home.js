@@ -84,7 +84,7 @@ class Home extends React.Component {
           <br />
           <br />
           <Link to='/myProfiles'>
-            <Button color='blue'>My Profiles</Button>
+            <Button color='green'>My Profiles</Button>
           </Link>
         </Container>
       )
@@ -93,7 +93,7 @@ class Home extends React.Component {
         <div>
           <Header textAlign='center'>You have have 0 Profiles</Header>
           <Link to='/MyProfileForm'>
-            <Button color='blue'>
+            <Button color='green'>
               Add New Profile
           </Button>
           </Link>
