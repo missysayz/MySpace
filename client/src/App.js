@@ -14,8 +14,6 @@ import MyProfileForm from './components/MyProfileForm';
 // import MyFriends from "./components/MyFriends";
 // import AuthProvider from "./providers/AuthProvider";
 
-import ProtectedRoute from "./components/ProtectedRoute";
-
 const App = () => (
   <Fragment>
 
@@ -26,7 +24,7 @@ const App = () => (
           <ProtectedRoute exact path='/' component={Home} />
           <ProtectedRoute exact path='/profiles' component={Profile} />
           <ProtectedRoute exact path='/my_profiles' component={MyProfiles} />
-          <ProtectedRoute exact path="/friends/:id" component={Friend} />
+          {/* <ProtectedRoute exact path="/friends/:id" component={Friend} /> */}
 
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
