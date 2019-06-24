@@ -22,7 +22,7 @@ class Login extends React.Component {
 
     return (
       <Segment basic>
-        <Header as='h1' textAlign='center'>Login</Header>
+        <Header as='h1' textAlign='center'>MySpace Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
             label='Email'

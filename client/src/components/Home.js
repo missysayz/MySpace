@@ -93,7 +93,7 @@ class Home extends React.Component {
     } else {
       return (
         <div>
-          <Header textAlign='center'>You have have 0 Profiles</Header>
+          <Header textAlign='center'>Following 0 Profiles</Header>
           <Link to='/MyProfileForm'>
             <Button color='green'>
               Add New Profile

@@ -26,7 +26,7 @@ class Register extends React.Component {
     return (
       <Segment basic>
         <Header as='h1' textAlign='center'>
-          Register
+          Sign Up for MySpace!
         </Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input

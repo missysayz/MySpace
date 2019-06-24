@@ -14,7 +14,7 @@ class Navbar extends React.Component {
             name='logout'
             onClick={() => handleLogout(this.props.history)}
           >
-            <Icon name='times circle outline' />
+            <Icon name='sign-out' />
             Logout
           </Menu.Item>
         </Menu.Menu>
@@ -57,7 +57,7 @@ class Navbar extends React.Component {
           inverted>
 
           <Menu.Item name="users">
-            <Icon name="users" />
+            <Icon name="globe" />
             <b>
               mySpace
             </b>
@@ -76,7 +76,7 @@ class Navbar extends React.Component {
 
           <Link to="/my_profiles">
             <Menu.Item name='profiles'>
-              <Icon name='smile outline' />
+              <Icon name='address card outline' />
               My Profiles
             </Menu.Item>
           </Link>

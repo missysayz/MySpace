@@ -24,7 +24,7 @@ class MyProfiles extends React.Component {
     return (
       <div>
         <br />
-        <Header as='h1' textAlign='center'>Your Profiles</Header>
+        <Header as='h1' textAlign='center'>Followed Profiles</Header>
         <br />
         <Card.Group itemsPerRow={4}>
           {profiles.map(profile =>
