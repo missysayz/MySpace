@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class User < ActiveRecord::Base
-  has_many :profiles
+  # has_many :profiles
   # has_many :friends
   # has_many :profiles, through: :friends
 
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
 serialize :follow_profiles, Array
 
-def self.random_profile(ids)
+def self.random_profiles(ids)
  ids = ids.empty? ? [0] : ids
  Profile.where("id NOT IN (?)", ids).order("RANDOM()")
 end

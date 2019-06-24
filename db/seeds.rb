@@ -1,8 +1,10 @@
+
+
 50.times do 
   name =  Faker::Name.name,
   dob = Faker::Date.birthday(18, 65),
   avatar = Faker::Avatar.image(name, '100x200', 'png', 'set2'),
-  Profile.create(name: name, dob: dob, avatar: avatar)
+  Profile.create(name: name, dob: dob, avatar: avatar, user_id: 1)
 end
 
 puts "50 profiles seeded"

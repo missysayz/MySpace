@@ -3,8 +3,7 @@ class Api::ProfilesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    render json: User.random_profiles
-    (current_user.follow_profiles)
+    render json: User.random_profiles(current_user.follow_profiles)
     
   end
 
